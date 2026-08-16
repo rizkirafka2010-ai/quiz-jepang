@@ -1,0 +1,103 @@
+body {
+    background: linear-gradient(135deg, #111827, #312e81);
+    font-family: Arial, sans-serif;
+}
+
+.game {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 20px;
+}
+/* Animasi jawaban benar */
+.answer.benar {
+    animation: benar 0.5s ease;
+}
+
+@keyframes benar {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Animasi jawaban salah */
+.answer.salah {
+    animation: salah 0.4s ease;
+}
+
+@keyframes salah {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* Animasi tombol berikutnya */
+.next {
+    transition: 0.3s;
+}
+
+.next:hover {
+    transform: scale(1.05);
+}
+#feedback {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    min-height: 40px;
+    margin: 10px 0;
+}
+
+.feedback-benar {
+    color: green;
+    animation: muncul 0.5s ease;
+}
+
+.feedback-salah {
+    color: red;
+    animation: muncul 0.5s ease;
+}
+
+@keyframes muncul {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
